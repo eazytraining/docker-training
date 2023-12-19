@@ -1,0 +1,40 @@
+version: '3.3'
+services:
+  pozos-registry:
+    image: registry:2.8.1
+    container_name: pozos-registry
+    restart: always
+    ports: 
+      - "5000:5000"
+    volumes:
+      - /opt/docker/registry:/var/lib/registry
+      - ./registry/auth:/auth
+    environment:
+      - REGISTRY_STORAGE_DELETE_ENABLED=true
+      - REGISTRY_AUTH=htpasswd
+      - "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"
+      - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+    command:
+      - /bin/sh
+      - -c
+      - 'apk add --no-cache apache2-utils && htpasswd -Bbn pozos change-me > /auth/htpasswd && registry serve /etc/docker/registry/config.yml'
+    networks:
+      - pozos_reg_network
+
+  frontend-reg:
+    image: joxit/docker-registry-ui:2
+    container_name: frontend-reg
+    depends_on:
+      - pozos-registry
+    ports: 
+      - "8080:80"
+    environment:
+      - NGINX_PROXY_PASS_URL=http://pozos-registry:5000
+      - DELETE_IMAGES=true
+      - REGISTRY_TITLE=Pozos
+      - SINGLE_REGISTRY=true
+    networks:
+      - pozos_reg_network
+
+networks:
+  pozos_reg_network:

@@ -1,0 +1,7 @@
+# create VM
+# vagrant explanation : https://www.youtube.com/watch?v=Z-Q62_OUqT4&feature=youtu.be
+# common vagrant issue : https://drive.google.com/drive/folders/1J9uNNA-i4JWhZsWOX6DrXXRBM-GmrWma
+
+vagrant up
+
+vagrant ssh docker

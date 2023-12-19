@@ -1,0 +1,15 @@
+# Cluster installation with one master and one node
+
+  - Initialize the cluster on master: docker swarm init --advertise-addr MASTER_IP_ADRESSE
+  - Add the worker to the cluster by typing this command from the worker:  docker swarm join --token TOKEN_ID IP_ADRESSE:2377 
+  - Verify on master: docker node ls
+
+# deploy the voting management application
+
+  - retrieve code: git clone https://github.com/dockersamples/example-voting-app.git
+  - launch stack creation on master: docker stack deploy -c docker-stack.yml vote-stack
+  - verify: docker stack ls
+            docker stack ps vote-stack
+
+  - Test application on browser: vote: 192.168.99.10:5000
+                                 result: 192.168.99.10:5001
