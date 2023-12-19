@@ -1,0 +1,20 @@
+# Creating a bridge-type network 
+
+1- creating the network: docker network create --driver=bridge --subnet=192.168.2.0/24 sharenetwork
+
+2- list networks: docker network ls
+
+3- creating the first ubuntu1 container: docker run -it --name ubuntu1 --network sharenetwork -d ubuntu /bin/bash
+
+4- creating the second ubuntu2 container: docker run -it --name ubuntu2 --network sharenetwork -d ubuntu /bin/bash 
+
+5- check: docker ps
+
+6- have detailed information on one of the containers: docker inspect nom_conteneur
+
+7- go to the ubuntu1 container: docker exec -it ubuntu1 /bin/bash
+
+8- install the pinging tool: apt-get install && apt-get install iputils-ping
+
+9- test if ubuntu1 and ubuntu2 are networked
+   - still in the ubuntu1 container type: ping ubuntu2

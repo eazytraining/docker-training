@@ -1,0 +1,2 @@
+vagrant : 2.4.0
+virtualbox : 6.1.48

@@ -1,0 +1,66 @@
+# Installing docker on centos
+
+1- Get the installation script
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+2- Run script
+sh get-docker.sh
+
+--------------
+
+# Post-installation tasks
+
+1- Put the centos user in the docker group so that he can use docker and avoid using the root user.
+
+sudo usermod -aG docker centos
+
+2- Starting the docker service
+
+sudo systemctl start docker
+sudo systemctl status docker
+
+3- Disconnect and reconnect
+
+4- test
+
+docker ps
+
+5- Check if the user vagrant is part of the user group with the command:
+
+groups
+
+6- Start the docker service at machine startup with the command:
+
+sudo systemctl enable docker
+
+--------------------
+
+# Function check operations
+
+docker --version
+docker run hello-world
+
+--------------------
+
+# Launch the first container (nginx)
+
+docker run -name nginx -d -p 80:80 nginx
+
+# To access the application, enter the machine's IP address in the browser, followed by port 80.
+
+192.168.99.10:80
+
+-------------------
+
+# Using environment variables
+
+docker run --name web-color -e APP_COLOR="red" -d -p 8080:8080 kodekloud/webapp-color
+
+# Browser test
+192.168.99.10:8080
+
+docker run --name web-color2 -e APP_COLOR="red" -d -p 8180:8080 kodekloud/webapp-color
+
+# Browser test
+192.168.99.10:8180
+

@@ -1,0 +1,14 @@
+# Deploy odoo software using docker compose
+
+1- Installing docker compose
+
+   curl -SL https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+   sudo chmod +X /usr/local/bin/docker-compose
+   docker-compose -v
+
+2- Deploy application
+
+   - In the 05_lab-5 folder in this directory, check that the access port is 80 and that the odoo and db containers are in the odoo_network network
+   - Deploy: docker-compose up -d
+   - Verify: docker ps
+   - In the browser: 192.168.99.10:80 

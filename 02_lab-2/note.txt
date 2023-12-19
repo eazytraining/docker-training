@@ -1,0 +1,63 @@
+# Creating a dockerhub and github account
+
+1- Creating a dockerhub account
+
+- Type dockerhub account in the browser
+- Go to sign in
+- Create new account
+- Follow the account creation procedure
+
+
+2- Create a github account
+
+- Type on the github browser
+- Go to sign in
+- Create new account
+- Follow the account creation procedure
+
+---------------------
+
+# Image creation and testing
+
+1- Create the image:
+
+   - mkdir webapp
+   - cd webapp
+   - vi Dockerfile
+   - copy the contents of the Dockerfile in the webapp directory of this repo
+   - retrieve code: git clone https://github.com/diranetafen/static-website-example.git
+
+2- Run the image and test
+
+   - docker build -t webapp:v1 .
+   - check that the image has been created: docker images
+   - start a container: docker run --name webapp -d -p 80:80 webapp:v1
+   - Go to the browser to access the application with the machine address followed by port 80: 192.168.99:80
+
+
+-----------------------
+
+# Managing the image on dockerhub
+
+1- Log in to your dockerhub account
+   - username: eazytraining
+   - password: eazytraining_dockerhub_password
+
+2- Push the image
+   - Tag image: docker tag id_image eazytraining/webapp:v1
+   - Push image: docker push eazytraining/webapp:v1
+
+3- Checking
+   - Go to your dockerhub account, then to repositories
+   - Check the name of the image you've just pushed
+
+-------------------------
+
+
+# Automatically retrieve code from github
+
+   1- copy the contents of the updated Dockerfile to the 02_lab-2/ directory of this repository
+   2- build the image: docker build -t webapp:v2 .
+   3- create the container with the new image:  docker run --name webapp2 -d -p 80:80 webapp:v2
+
+
