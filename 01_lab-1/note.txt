@@ -44,7 +44,7 @@ docker run hello-world
 
 # Launch the first container (nginx)
 
-docker run -name nginx -d -p 80:80 nginx
+docker run --name nginx -d -p 80:80 nginx
 
 # To access the application, enter the machine's IP address in the browser, followed by port 80.
 
