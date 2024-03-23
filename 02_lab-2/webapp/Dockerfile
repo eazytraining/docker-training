@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Eazytraining
+LABEL maintainer="Eazytraining"
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx git
 RUN rm -Rf /var/www/html/*
