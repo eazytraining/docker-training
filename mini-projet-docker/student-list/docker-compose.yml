@@ -6,7 +6,7 @@ services:
     depends_on:
       - pozos_api
     ports:
-        - "90:80"
+        - "80:80"
     volumes:
         - ./website/:/var/www/html
     environment:
@@ -25,3 +25,5 @@ services:
 
 networks:
   pozos_network:
+    name: pozos_network
+    driver: bridge

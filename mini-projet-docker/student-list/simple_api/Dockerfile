@@ -1,8 +1,8 @@
-FROM python:2.7-buster
-LABEL maintainer="Aurelie Kamgang" email="toto@admin.fr"
-RUN apt update -y && apt install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
-RUN pip install flask==1.1.2 flask_httpauth==4.1.0 flask_simpleldap python-dotenv==0.14.0
-COPY student_age.py /
+FROM python:3.8-buster
+LABEL maintainer="EAZYTraining" email="contact@eazytraining.fr"
+RUN apt update -y && apt install python3-dev libsasl2-dev libldap2-dev libssl-dev -y 
+COPY requirements.txt student_age.py /
+RUN pip3 install -r /requirements.txt
 VOLUME /data
 EXPOSE 5000
-CMD [ "python", "./student_age.py" ]
+CMD [ "python3", "./student_age.py" ]
