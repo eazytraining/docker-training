@@ -42,6 +42,7 @@
 1- Log in to your dockerhub account
    - username: eazytraining
    - password: eazytraining_dockerhub_password
+   - to login in dockerhub: docker login
 
 2- Push the image
    - Tag image: docker tag id_image eazytraining/webapp:v1

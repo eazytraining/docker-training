@@ -14,7 +14,7 @@
 
 7- go to the ubuntu1 container: docker exec -it ubuntu1 /bin/bash
 
-8- install the pinging tool: apt-get install && apt-get install iputils-ping
+8- install the pinging tool: apt-get update && apt-get install && apt-get install iputils-ping
 
 9- test if ubuntu1 and ubuntu2 are networked
    - still in the ubuntu1 container type: ping ubuntu2

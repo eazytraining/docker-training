@@ -10,12 +10,13 @@
 
 # Create a toto.txt file in the /tmp directory of the ubuntu1 container and check that it is present in the /tmp directory of the ubuntu2 container.
 
-  docker exec -it ubunu1 /bin/bash
+  docker exec -it ubuntu1 /bin/bash
+  cd /tmp
   touch toto.txt
   exit
   docker exec -it ubuntu2 /bin/bash
   ls /tmp
-  echo "eazytraining is the best"> /tmp/
+  echo "eazytraining is the best"> /tmp/toto.txt
 
   docker exec -it ubuntu1 /bin/bash
   cat /tmp/toto.txt
