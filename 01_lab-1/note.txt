@@ -4,7 +4,7 @@
 curl -fsSL https://get.docker.com -o get-docker.sh
 
 2- Run script
-sh get-docker.sh
+sudo sh get-docker.sh
 
 --------------
 
@@ -47,6 +47,11 @@ docker run hello-world
 docker run --name nginx -d -p 80:80 nginx
 
 # To access the application, enter the machine's IP address in the browser, followed by port 80.
+
+use this command to show your IP: 
+```bash ip a ```
+check your interface :
+in my case i have : 192.168.99.10
 
 192.168.99.10:80
 

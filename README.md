@@ -4,4 +4,4 @@
 
 1. Git : https://eazytraining.fr/cours/introduction-a-git/
 
-Création de micro-services à l’aide de Docker: https://eazytraining.fr/cours/introduction-a-docker/
+2. Création de micro-services à l’aide de Docker: https://eazytraining.fr/cours/introduction-a-docker/
