@@ -6,7 +6,7 @@
 
 # deploy the voting management application
 
-  - retrieve code: git clone https://github.com/dockersamples/example-voting-app.git
+  - retrieve code: cd example-voting-app
   - launch stack creation on master: docker stack deploy -c docker-stack.yml vote-stack
   - verify: docker stack ls
             docker stack ps vote-stack
