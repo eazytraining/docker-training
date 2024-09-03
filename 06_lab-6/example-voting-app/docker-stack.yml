@@ -2,7 +2,7 @@
 # trying it in compose will fail because of multiple replicas trying to bind to the same port
 # Swarm currently does not support Compose Spec, so we'll pin to the older version 3.9
 
-version: "3.9"
+version: "3.7"
 
 services:
 
