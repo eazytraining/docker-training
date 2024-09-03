@@ -1,7 +1,7 @@
 # Installing docker on centos
 
 1- Get the installation script
-curl -fsSL https://get.docker.com -o get-docker.sh sh get-docker.sh --version 19.03
+curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh --version 19.03
 
 2- Run script
 sudo sh get-docker.sh
