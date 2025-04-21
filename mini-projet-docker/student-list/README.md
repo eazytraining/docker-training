@@ -1,7 +1,7 @@
-[# student-list 
+# student-list 
 This repo is a simple application to list student with a webserver (PHP) and API (Flask)
 
-!\[project\](https://user-images.githubusercontent.com/18481009/84582395-ba230b00-adeb-11ea-9453-22ed1be7e268.jpg)
+![project](https://user-images.githubusercontent.com/18481009/84582395-ba230b00-adeb-11ea-9453-22ed1be7e268.jpg)
 
 
 ------------
@@ -43,9 +43,9 @@ For this POC, you will only use one single machine with a docker installed on it
 
 The build and the deployment will be made on this machine.
 
-POZOS recommends you to use centos7.6 OS because it's the most used in the company.
+POZOS recommends you to use ubuntu20.04 OS because it's the most used in the company.
 
-Please also note that you are authorized to use a virtual machine base on Centos7.6 and not your physical machine.
+Please also note that you are authorized to use a virtual machine base on ubuntu20.04 and not your physical machine.
 
 The security is a very critical aspect of POZOS DSI so please do not disable the firewall or other security mechanisms otherwise please explain your reasons in your delivery.
 
@@ -61,7 +61,7 @@ student_list has two modules:
 
 Your work is to build one container for each module an make them interact with each other
 
-Application source code can be found \[here\](https://github.com/diranetafen/student-list.git "here")
+Application source code can be found [here](https://github.com/diranetafen/student-list.git "here")
 
 The files that you must provide (in your delivery) are ***Dockerfile*** and ***docker-compose.yml***  (currently both are empty)
 
@@ -73,10 +73,9 @@ Now it is time to explain you each file's role:
 - student_age.json: contain student name with age on JSON format
 - student_age.py: contains the source code of the API in python
 - index.php: PHP  page where end-user will be connected to interact with the service to - list students with age. You need to update the following line before running the website container to make ***api_ip_or_name*** and ***port*** fit your deployment
-- docker-compose-registry.yml: to launch the local registry to save your API
 
 ```bash 
- $url = 'http://<api_ip_or_name:port>/pozos/api/v1.0/get_student_ages';
+ $url = 'http://<api_ip_or_name_service:port>/pozos/api/v1.0/get_student_ages';
  ```
 
 
@@ -171,11 +170,10 @@ POZOS need you to deploy a private registry and store the built images
 
 So you need to deploy :
 
-- a docker [registry](https://hub.docker.com/_/registry/ "registry")
+- a docker [registry](https://docs.docker.com/registry/ "registry")
 - a web [interface](https://hub.docker.com/r/joxit/docker-registry-ui/ "interface") to see the pushed image as a container
 
-
-Or you can use \[Portus\](http://port.us.org/ "Portus") to run both
+Or you can use [Portus](http://port.us.org/ "Portus") to run both
 
 Don't forget to push your image on your private registry and show them in your delivery.
 
@@ -192,7 +190,6 @@ Your delivery will be evaluated on:
 - Presentation quality
 - The structure of your github repository
 
-Send your delivery at ***eazytrainingfr@gmail.com*** and we will provide you the link of the solution.
+Send your delivery at ***contact@eazytraining.fr*** and we will provide you the link of the solution.
 
-!\[good luck\](https://user-images.githubusercontent.com/18481009/84582398-cad38100-adeb-11ea-95e3-2a9d4c0d5437.gif)
-](../../../student-list/README.md)
+![good luck](https://user-images.githubusercontent.com/18481009/84582398-cad38100-adeb-11ea-95e3-2a9d4c0d5437.gif)
