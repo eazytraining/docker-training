@@ -78,7 +78,7 @@ POZOS provides instructions to build the API container:
 - **Prerequisites:** The API uses Flask and requires additional packages. Install them using:
 
 ```bash
-apt update -y && apt install python-dev python3-dev libsasl2-dev libldap2-dev libssl-dev -y
+apt update -y && apt install -y python3-dev libsasl2-dev libldap2-dev libssl-dev
 ```
 
 Copy `requirements.txt` to `/` and install packages:
@@ -113,7 +113,7 @@ Deploy two services:
 
 - **website**:
   - Image: `php:apache`
-  - Environment: Set `USERNAME` and `PASSWORD` to access the API.
+  - Environment: Set `USERNAME` and `PASSWORD` to access the API (USERNAME=toto ; PASSWORD=python).
   - Volume: Bind local `./website` directory to `/var/www/html`.
   - Dependency: Ensure it starts after the API service.
   - Expose the required port.
@@ -152,6 +152,15 @@ Your delivery will be evaluated on:
 - Repository structure
 
 Send your delivery link to **contact@eazytraining.fr** to receive the solution link.
+
+
+📌 **Useful Resource:**
+
+To perform this exercise in a standardized environment, you can use the following Vagrant stack provided by Eazytraining:
+
+🔗 [Vagrant Stack with Docker](https://github.com/diranetafen/cursus-devops/tree/master/vagrant/docker)
+
+
 
 ![Good luck!](https://user-images.githubusercontent.com/18481009/84582398-cad38100-adeb-11ea-95e3-2a9d4c0d5437.gif)
 
