@@ -72,7 +72,7 @@ $url = 'http://<api_ip_or_service_name:port>/pozos/api/v1.0/get_student_ages';
 
 POZOS provides instructions to build the API container:
 
-- **Base Image:** Use `python:3.8-buster`.
+- **Base Image:** Use `python:3.11-slim`.
 - **Maintainer:** Include maintainer information in your Dockerfile.
 - **Source Code:** Copy the API source code to the root directory `/` inside the container.
 - **Prerequisites:** The API uses Flask and requires additional packages. Install them using:
