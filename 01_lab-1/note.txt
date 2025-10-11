@@ -1,4 +1,4 @@
-# Installing docker on centos
+# Installing docker on $USER
 
 1- Get the installation script
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -10,9 +10,10 @@ sudo sh get-docker.sh --version 20.10.13
 
 # Post-installation tasks
 
-1- Put the centos user in the docker group so that he can use docker and avoid using the root user.
+1- Put the $USER user in the docker group so that he can use docker and avoid using the root user.
+e.g: depends on your Operating system retrieve your first user like : ubuntu or centos
 
-sudo usermod -aG docker centos
+sudo usermod -aG docker $USER
 
 2- Starting the docker service
 
@@ -23,7 +24,7 @@ sudo systemctl status docker
 
 4- test
 
-docker ps
+docker version
 
 5- Check if the user vagrant is part of the user group with the command:
 
@@ -50,7 +51,7 @@ docker run --name nginx -d -p 80:80 nginx
 
 use this command to show your IP: 
 ```bash ip a ```
-check your interface :
+check your interface enp0s8:
 in my case i have : 192.168.99.10
 
 192.168.99.10:80
