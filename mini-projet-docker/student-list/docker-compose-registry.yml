@@ -1,3 +1,4 @@
+#Plus tres necessaire mais utile pour la syntaxe 
 version: '3.3'
 services:
   pozos-registry:
@@ -38,3 +39,5 @@ services:
 
 networks:
   pozos_reg_network:
+    name: pozos_reg_network
+    driver: bridge
