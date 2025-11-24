@@ -1,15 +1,7 @@
-FROM python:3.14-slim
-
-LABEL maintainer="Eazytraining <contact@eazytraining.fr>" \
-      description="Pozos API Student List"
-
-# Set working directory
+FROM python:3.13-slim
+LABEL maintainer="EAZYTraining"
 WORKDIR /app
-
-# Copy requirements first for better layer caching
-COPY requirements.txt .
-
-# Install system dependencies
+COPY student_age.py .
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         python3-dev \
@@ -19,18 +11,8 @@ RUN apt-get update -y && \
         gcc \
         build-essential && \
     rm -rf /var/lib/apt/lists/*
-
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy application code
-COPY student_age.py .
-
-# Create volume mount point
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
 VOLUME /data
-
-# Expose application port
 EXPOSE 5000
-
-# Run the application
-CMD ["python3", "./student_age.py"]
+CMD [ "python3", "./student_age.py" ]
